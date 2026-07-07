@@ -73,7 +73,7 @@ section.divider code { background: rgba(255,255,255,.18); color: #fff; }
 - **Simulating molecules & materials.** Nature runs on quantum mechanics, and describing $n$ interacting quantum particles classically takes $2^n$ numbers. That overwhelms classical RAM fast; a quantum computer *is* such a system.
 - **Combinatorial optimization** (scheduling, routing, portfolios): encode the problem as an **energy landscape** and let physics settle into the minimum.
 - **Machine learning features & sampling**: quantum dynamics is a rich, hard-to-simulate feature map.
-- **And one small day-one win**: true randomness straight from physics, no pseudo-random trick behind it.
+- **And a day-one bonus**: true randomness straight from physics, not from a pseudo-random algorithm.
 
 ---
 
