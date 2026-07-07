@@ -1,7 +1,7 @@
 # Learn Quantum Computing with QiliSDK
 
-Material for the EuroPython 2026 hands-on tutorial *Learn Quantum Computing with QiliSDK: From
-Circuits to Pulse-Level Control* (~3 hours, no quantum background required).
+Material for the EuroPython 2026 hands-on tutorial **Learn Quantum Computing with QiliSDK: From
+Circuits to Pulse-Level Control**.
 
 ## Where everything is
 
