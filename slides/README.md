@@ -1,7 +1,7 @@
 # Slides: *Learn Quantum Computing with QiliSDK*
 
 A [Marp](https://marp.app/) deck (Markdown-based). It's a **thin framing deck**: title, motivation
-("why quantum computing", the honest 2026 picture, the day's mission), the 4 architecture diagrams
+("why quantum computing", the 2026 reality check, the day's mission), the 4 architecture diagrams
 as the spine, one or two concept slides per tutorial part, and resources. The actual teaching
 happens in the `notebooks/`; these slides orient and recap.
 

@@ -53,7 +53,7 @@ QiliSDK ships the **QiliSim** C++ simulator inside the wheel, so there is nothin
 Every tutorial notebook starts with a **"Run me first"** cell that installs QiliSDK automatically when it's missing. So on Colab you just:
 
 1. Open the notebook in Colab (File → Upload notebook, or use the shared links we send).
-2. Run the first cell. It runs `pip install "qilisdk[openqasm,qir]==0.2.0" matplotlib numpy` for you (~1 min).
+2. Run the first cell. It runs `pip install "qilisdk[openqasm,qir]==0.2.1" matplotlib numpy` for you (~1 min).
 3. Continue normally.
 
 That same first cell is a **no-op locally** (if QiliSDK is already installed it does nothing), so the notebooks are identical in both environments.
@@ -66,7 +66,7 @@ Run this anywhere (a cell, or `python -c`):
 
 ```python
 import qilisdk
-print(qilisdk.__version__)     # 0.2.0
+print(qilisdk.__version__)     # 0.2.1
 print(qilisdk.about())         # full diagnostics: versions, system, QiliSim/QTensor import status
 ```
 

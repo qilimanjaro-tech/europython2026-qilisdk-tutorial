@@ -62,9 +62,15 @@ section.divider code { background: rgba(255,255,255,.18); color: #fff; }
 
 # Learn Quantum Computing with QiliSDK
 
-<p class="sub">From Circuits to Pulse-Level Control</p>
+<p class="sub">EuroPython 2026</p>
 
-<p class="meta">EuroPython 2026 · hands-on tutorial (about 3 h)<br>No quantum background required, bring Python</p>
+---
+
+## Me, Qilimanjaro, and QiliSDK
+
+- **Vyron Vasileiadis** — Tech Lead at **Qilimanjaro Quantum Tech** · vyron@qilimanjaro.tech
+- **Qilimanjaro** builds **analog quantum processors** and the software stack to run them, from Barcelona.
+- **QiliSDK** is that stack's open-source Python SDK, and your tool today: **digital** *and* **analog** quantum computing in one API and the C++ **QiliSim** simulator.
 
 ---
 
@@ -77,7 +83,7 @@ section.divider code { background: rgba(255,255,255,.18); color: #fff; }
 
 ---
 
-## Quantum computing in 2026, honestly
+## Quantum computing in 2026
 
 - **It will not**: speed up Django, give a generic "everything runs faster" boost, or hold big data (100 qubits do not load your database).
 - **Devices today**: noisy, small, expensive, but real, running, and improving every year.
@@ -91,7 +97,7 @@ section.divider code { background: rgba(255,255,255,.18); color: #fff; }
 - A working **mental model**: qubits, measurement, gates, Hamiltonians, noise.
 - Programs you built yourself: a **quantum random number generator** and a **conference schedule** found by annealing.
 - Real workflows at toy size: a **molecule's ground-state energy** and a **microservice fleet placed** across servers.
-- Engineering honesty: a **noise budget** for the chemistry result and a **circuit compiled** onto a real chip layout.
+- Hardware limits, hands-on: a **noise budget** for the chemistry result, and a **circuit compiled** onto a real chip layout.
 
 ---
 
@@ -127,7 +133,7 @@ One thread runs through the whole day:
 **Two ways to run everything, pick one:**
 
 - **Local**: `pip install -r setup/requirements.txt` (Python 3.11–3.13), then open the notebooks.
-- **Colab**: every notebook's first cell installs QiliSDK (pinned to `0.2.0`) automatically. Zero local setup.
+- **Colab**: every notebook's first cell installs QiliSDK (pinned to `0.2.1`) automatically. Zero local setup.
 
 **Right now:** open and run `notebooks/00_setup.ipynb`.
 If its last cell prints counts like `{'00': ~500, '11': ~500}`, you're ready. ✅
@@ -151,7 +157,7 @@ If its last cell prints counts like `{'00': ~500, '11': ~500}`, you're ready. �
 - Notebooks come in two flavors:
   - `notebooks/…`: **attendee** version (blank `# TODO` cells)
   - `notebooks/solutions/…`: **completed**, with outputs
-- Every snippet is **verified to run** against `qilisdk 0.2.0`.
+- Every snippet is **verified to run** against `qilisdk 0.2.1`.
 
 > Stuck on an exercise? The solution is one folder away, but try first. 🙂
 
@@ -333,25 +339,25 @@ $$\texttt{Backend.execute(functional, readout)} \rightarrow \texttt{Result}$$
 
 # Execution & Toward Hardware
 
-### Same code, laptop to QPU: swap, export, compile
+### Swapping backends, circuit transpilation, and a quantum reservoir
 
 ---
 
-## Part 6: swap, export, compile
+## Part 6: swapping backends
 
 - **Swapping the backend** is like swapping a database driver, or moving numpy code to CuPy: one line, same program.
-- **Open Quantum Assembly (OpenQASM)** is the interchange format, like JSON for circuits. **Quantum Intermediate Representation (QIR)** is the bytecode.
-- The **transpiler is a compiler**: instruction selection (your gates → the chip's native set) plus register allocation (your qubits → physical qubits).
-- **SABRE** (SWAP-based Bidirectional heuristic search), a routing pass used by production compilers, makes every two-qubit gate land on physically connected qubits.
+- `QiliSim` (CPU), `CudaBackend` (GPU), and remote **QPUs** all take the *same* functional and readout you already wrote.
+- **Open Quantum Assembly (OpenQASM)** is the interchange format, like JSON for circuits; **Quantum Intermediate Representation (QIR)** is the bytecode.
+- Export once, run anywhere: the circuit you built today leaves QiliSDK and lands in another toolchain unchanged.
 
 ---
 
-## Part 6: the honest pulse story
+## Part 6: circuit transpilation
 
-- QiliSDK 0.2.0 ships **no pulse or waveform API**. We will not pretend otherwise.
-- The closest real thing is the analog **`Schedule`**: continuous, time-dependent **Hamiltonian-level control**, not waveforms on physical channels.
-- Genuine pulse experiments (Rabi calibration, $T_1$ measurement) run on real devices through **SpeQtrum**: a remote job queue, not a local backend.
-- The mental model survives the trip to hardware: describe *what to run*, submit it, read the results.
+- The **transpiler is a compiler**: instruction selection (your gates → the chip's native set) plus register allocation (your qubits → physical qubits).
+- Real chips run only a small **native gate set** and connect only *some* qubit pairs, so an abstract circuit rarely fits as written.
+- **SABRE** (SWAP-based Bidirectional heuristic search), a routing pass used by production compilers, inserts SWAPs so every two-qubit gate lands on physically connected qubits.
+- Transpiling *multiplies* the gate count, spending directly against Part 5's noise budget: the bridge from a clean circuit to a runnable one.
 
 ---
 
@@ -385,7 +391,7 @@ A small set of primitives, composed and executed uniformly:
 
 <p class="meta">
 Docs (EN / ES / CA): <strong>qilimanjaro-tech.github.io/qilisdk</strong> · Source: <strong>github.com/qilimanjaro-tech/qilisdk</strong><br>
-Diagnostics: <code>print(qilisdk.about())</code> · Install: <code>pip install qilisdk==0.2.0</code><br>
+Diagnostics: <code>print(qilisdk.about())</code> · Install: <code>pip install qilisdk==0.2.1</code><br>
 Real hardware access: <strong>SpeQtrum</strong> and cloud QPUs run the same functional + readout you wrote today<br>
 Rerun the notebooks bigger: more talks, more services, tighter noise budgets
 </p>

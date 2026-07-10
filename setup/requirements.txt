@@ -1,7 +1,7 @@
 # EuroPython 2026: QiliSDK tutorial dependencies
 # Python 3.11, 3.12, or 3.13.   Install with:  pip install -r requirements.txt
 
-qilisdk[openqasm,qir]==0.2.0   # core SDK + QiliSim simulator, plus OpenQASM/QIR interop (Part 3)
+qilisdk[openqasm,qir]==0.2.1   # core SDK + QiliSim simulator, plus OpenQASM/QIR interop (Part 3)
 matplotlib>=3.10               # circuit / Bloch / schedule / histogram plots
 numpy>=2                       # arrays + the QRC linear-readout exercise (Part 4)
 scikit-learn>=1.4              # optional: Part 4 QRC stretch exercise (linear readout)
