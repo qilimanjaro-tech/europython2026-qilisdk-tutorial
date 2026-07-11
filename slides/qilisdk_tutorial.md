@@ -88,27 +88,21 @@ section.divider code { background: rgba(255,255,255,.18); color: #fff; }
 - **It will not**: speed up Django, give a generic "everything runs faster" boost, or hold big data (100 qubits do not load your database).
 - **Devices today**: noisy, small, expensive, but real, running, and improving every year.
 - **So the smart way in**: a simulator on your laptop is exact and free at learning scale, with none of the queueing.
-- **And QiliSDK's swappable backends** mean today's code retargets to real hardware unchanged. Parts 5 and 6 make both points concrete.
+- **And it's not a dead end**: what you write on the simulator today runs on real hardware tomorrow, unchanged (Parts 5–6).
 
 ---
 
-## What you'll walk away with
+## What you'll build today
 
-- A working **mental model**: qubits, measurement, gates, Hamiltonians, noise.
-- Programs you built yourself: a **quantum random number generator** and a **conference schedule** found by annealing.
-- Real workflows at toy size: a **molecule's ground-state energy** and a **microservice fleet placed** across servers.
-- Hardware limits, hands-on: a **noise budget** for the chemistry result, and a **circuit compiled** onto a real chip layout.
+You'll write each of these yourself, not just watch it run:
 
----
+- a **quantum dice roller** — true randomness you can trust (Parts 1–2);
+- a **conference schedule** solved by quantum annealing (Part 3);
+- a **molecule's ground-state energy** and a **microservice placement** (Part 4);
+- a **noise budget**: how much gate error the chemistry survives (Part 5);
+- a **circuit compiled onto a real chip**, then a **quantum-reservoir forecaster** (Part 6).
 
-## Your mission today
-
-One thread runs through the whole day:
-
-- **Learn the rules** of the quantum world (Parts 1 and 2) and build your first real program: a **quantum dice roller**.
-- **Schedule conference talks** with a quantum annealer (Part 3).
-- **Compute a molecule's energy** and **split microservices across servers** (Part 4).
-- **Find how much noise those answers survive** (Part 5), then **compile and retarget them** toward a real chip (Part 6).
+Underneath it all: a working feel for qubits, gates, Hamiltonians, and noise.
 
 ---
 
@@ -145,8 +139,6 @@ If its last cell prints counts like `{'00': ~500, '11': ~500}`, you're ready. �
 ## The architecture
 
 ![h:500](img/overall.jpg)
-
-<p class="cap">Primitives → Workflows → Execution. <strong>The same program runs on a CPU, a GPU, or a quantum processing unit (QPU) by changing one line: the backend.</strong></p>
 
 ---
 
@@ -189,6 +181,7 @@ That is every symbol today's math needs.
 
 - A **qubit** is two complex numbers, its **amplitudes**: one weight for `0`, one for `1`. Think `np.array([a, b])` with unit length.
 - **Measuring** samples one outcome with probability $|\text{amplitude}|^2$ (the **Born rule**) and destroys the superposition. No peeking twice.
+- 2 qubits need 4 amplitudes: one for `00`, one for `01`, one for `10` and one for `11`.
 - $n$ qubits need $2^n$ amplitudes. That **memory wall** is why Feynman proposed quantum computers in the first place.
 - But measurement returns only $n$ classical bits, so algorithms must **choreograph interference**: wrong answers cancel, the right one survives.
 
@@ -237,7 +230,7 @@ $$\texttt{Backend.execute(functional, readout)} \rightarrow \texttt{Result}$$
 - **Functional** = *what* to run: `DigitalPropagation(circuit)` wraps your circuit.
 - **Backend** = *where* to run: `QiliSim`, the built-in simulator. **Readout** = *what to measure*: samples, expectation values, or the exact state.
 - A bare `Circuit` never executes. The wrapper keeps *what* cleanly separate from *where*.
-- **The day's thesis**: the same program runs on a CPU, a GPU, or a QPU by changing one line. Part 6 pays it off.
+- **One call, every backend.** The same three-part call runs on the simulator now and a real QPU later — you swap only the `Backend`. We do exactly that in Part 6.
 
 ---
 
@@ -321,7 +314,7 @@ $$\texttt{Backend.execute(functional, readout)} \rightarrow \texttt{Result}$$
 - Noise turns pure states into **mixtures**. A **density matrix** describes one: a probability-weighted mixture of states, like a dict of state to probability.
 - Channels have developer analogies: **bit flips** (random data corruption), **amplitude damping** (energy leaks away like a leaky capacitor, timescale $T_1$), **readout error** (a flaky sensor).
 - **Ideal vs noisy is one argument**: `QiliSim(noise_model=nm)`. Same functional, same readout.
-- The payoff experiment: **how much gate error** can the hydrogen result absorb before it stops being chemistry?
+- And the real test: **how much gate error** can the hydrogen result absorb before it stops being chemistry?
 
 ---
 
@@ -378,7 +371,7 @@ A small set of primitives, composed and executed uniformly:
 `QTensor` · `Circuit` · `Hamiltonian` · `Schedule` · `Readout`
  → wrapped in **Functionals** → run by a swappable **Backend**.
 
-> **The one line that did it all:** `backend.execute(functional, readout)`.
+> Every part today ran through one call: `backend.execute(functional, readout)`.
 
 ---
 
@@ -392,6 +385,6 @@ A small set of primitives, composed and executed uniformly:
 <p class="meta">
 Docs (EN / ES / CA): <strong>qilimanjaro-tech.github.io/qilisdk</strong> · Source: <strong>github.com/qilimanjaro-tech/qilisdk</strong><br>
 Diagnostics: <code>print(qilisdk.about())</code> · Install: <code>pip install qilisdk==0.2.1</code><br>
-Real hardware access: <strong>SpeQtrum</strong> and cloud QPUs run the same functional + readout you wrote today<br>
+Real hardware access: <strong>SpeQtrum</strong> and cloud QPUs run the code you wrote today, unchanged<br>
 Rerun the notebooks bigger: more talks, more services, tighter noise budgets
 </p>
