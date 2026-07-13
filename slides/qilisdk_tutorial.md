@@ -247,7 +247,7 @@ That is every symbol today's math needs.
 - **Gates** are reversible matrix operations on the amplitude vector: the Hadamard gate $H$ creates superposition, the controlled-NOT (**CNOT**) entangles two qubits.
 - A **circuit** is a program: an ordered list of gates applied to a fresh register of qubits.
 - **Measurement** ends the program and hands back plain classical bits.
-- **Sampling** a finite number of shots gives shot noise around the **exact** distribution; a simulator can hand you either one.
+- **Sampling** repeats the whole measurement **nshots** times and averages the outcomes into a distribution; more shots pull it toward the exact answer. A simulator can give you both.
 
 ---
 
@@ -398,12 +398,3 @@ A small set of primitives, composed and executed uniformly:
 <!-- _footer: '' -->
 
 # Thank you! 🙏
-
-<p class="sub">Questions? And where to go next:</p>
-
-<p class="meta">
-Docs (EN / ES / CA): <strong>qilimanjaro-tech.github.io/qilisdk</strong> · Source: <strong>github.com/qilimanjaro-tech/qilisdk</strong><br>
-Diagnostics: <code>print(qilisdk.about())</code> · Install: <code>pip install qilisdk==0.2.1</code><br>
-Real hardware access: <strong>SpeQtrum</strong> and cloud QPUs run the code you wrote today, unchanged<br>
-Rerun the notebooks bigger: more talks, more services, tighter noise budgets
-</p>
