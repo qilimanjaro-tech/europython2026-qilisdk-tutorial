@@ -54,6 +54,13 @@ section.divider code { background: rgba(255,255,255,.18); color: #fff; }
 .cap { font-size: 0.72em; color: #6a6a82; text-align: center; margin-top: 6px; }
 .center { text-align: center; }
 .small { font-size: 0.82em; }
+
+.qrgrid { display: flex; gap: 40px; justify-content: center; align-items: flex-start; margin-top: 28px; }
+.qrgrid > div { text-align: center; width: 300px; }
+.qrgrid img { width: 280px; height: 280px; background: #fff; padding: 8px; border: 1px solid #e6e6ef; border-radius: 10px; }
+.qrgrid .lbl { font-weight: 700; color: var(--accent); margin: 14px 0 4px; font-size: 0.95em; }
+.qrgrid .url { font-size: 0.72em; line-height: 1.35; word-break: break-word; }
+.qrgrid .url a { color: #55556e; }
 </style>
 
 <!-- _class: lead -->
@@ -106,19 +113,42 @@ Underneath it all: a working feel for qubits, gates, Hamiltonians, and noise.
 
 ---
 
+<!-- Schedule slide, commented out — replaced by the Links & QR-codes slide below. Uncomment to restore.
 ## Schedule
 
 | Part | Topic | Time |
-|------|-------|------|
 | 1 | Foundations: qubits, states, measurement | 30 min |
 | 2 | Circuits / Digital Quantum Computing | 30 min |
 | 3 | Hamiltonians & Analog Quantum Computing | 35 min |
-| - | *break* | 15 min |
+| - | break | 15 min |
 | 4 | Variational Algorithms & Optimization Models | 40 min |
 | 5 | Noise & Realistic Execution | 20 min |
 | 6 | Execution & Toward Hardware | 30 min |
 
-<p class="small center">About 3 hours in total. Times are approximate, we flex with the room.</p>
+About 3 hours in total. Times are approximate, we flex with the room.
+-->
+
+## Links & QR codes
+
+<p class="small center">Scan to open on your phone, or type the short URL.</p>
+
+<div class="qrgrid">
+<div>
+<img src="img/qr-tutorial.svg" alt="QR code for the EuroPython 2026 tutorial repository" />
+<div class="lbl">This tutorial</div>
+<div class="url"><a href="https://github.com/qilimanjaro-tech/europython2026-qilisdk-tutorial">github.com/qilimanjaro-tech/<br>europython2026-qilisdk-tutorial</a></div>
+</div>
+<div>
+<img src="img/qr-qilisdk.svg" alt="QR code for the QiliSDK GitHub repository" />
+<div class="lbl">QiliSDK source</div>
+<div class="url"><a href="https://github.com/qilimanjaro-tech/qilisdk">github.com/qilimanjaro-tech/qilisdk</a></div>
+</div>
+<div>
+<img src="img/qr-docs.svg" alt="QR code for the QiliSDK documentation" />
+<div class="lbl">Documentation</div>
+<div class="url"><a href="https://qilimanjaro-tech.github.io/qilisdk">qilimanjaro-tech.github.io/qilisdk</a></div>
+</div>
+</div>
 
 ---
 
@@ -200,7 +230,7 @@ That is every symbol today's math needs.
 
 ![h:480](img/qtensor.jpg)
 
-<p class="cap">Standard matrix ops · state factories (<code>ket</code>, <code>ghz</code>, <code>uniform</code>, …) · quantum-information primitives (partial trace, entropy, fidelity).</p>
+<!-- <p class="cap">Standard matrix ops · state factories (<code>ket</code>, <code>ghz</code>, <code>uniform</code>, …) · quantum-information primitives (partial trace, entropy, fidelity).</p> -->
 
 ---
 
