@@ -99,18 +99,6 @@ section.divider code { background: rgba(255,255,255,.18); color: #fff; }
 
 ---
 
-## What you'll build
-
-- a **quantum dice roller** — true randomness you can trust (Parts 1–2);
-- a **conference schedule** solved by quantum annealing (Part 3);
-- a **molecule's ground-state energy** and a **microservice placement** (Part 4);
-- a **noise budget**: how much gate error the chemistry survives (Part 5);
-- a **circuit compiled onto a real chip**, then a **quantum-reservoir forecaster** (Part 6).
-
-Underneath it all: a working feel for qubits, gates, circuits, Hamiltonians, and noise.
-
----
-
 <!-- Schedule slide, commented out — replaced by the Links & QR-codes slide below. Uncomment to restore.
 ## Schedule
 
@@ -172,6 +160,18 @@ If its last cell prints counts like `{'00': ~500, '11': ~500}`, you're ready. �
 - Every snippet is **verified to run** against `qilisdk 0.2.1`.
 
 > Stuck on an exercise? The solution is one folder away, but try first. 🙂
+
+---
+
+## What you'll build
+
+- a **quantum dice roller** — true randomness you can trust (Parts 1–2);
+- a **conference schedule** solved by quantum annealing (Part 3);
+- a **molecule's ground-state energy** and a **microservice placement** (Part 4);
+- a **noise budget**: how much gate error the chemistry survives (Part 5);
+- a **circuit compiled onto a real chip**, then a **quantum-reservoir forecaster** (Part 6).
+
+Underneath it all: a working feel for qubits, gates, circuits, Hamiltonians, and noise.
 
 ---
 
