@@ -197,7 +197,7 @@ That is every symbol today's math needs.
 
 <!-- _class: divider -->
 
-<p class="kicker">Part 1 · 30 min · notebooks/01_foundations.ipynb</p>
+<p class="kicker">Part 1 · notebooks/01_foundations.ipynb</p>
 
 # Foundations
 
@@ -234,7 +234,7 @@ That is every symbol today's math needs.
 
 <!-- _class: divider -->
 
-<p class="kicker">Part 2 · 30 min · notebooks/02_circuits.ipynb</p>
+<p class="kicker">Part 2 · notebooks/02_circuits.ipynb</p>
 
 # Circuits & Digital Quantum Computing
 
@@ -247,7 +247,7 @@ That is every symbol today's math needs.
 - **Gates** are reversible matrix operations on the amplitude vector: the Hadamard gate $H$ creates superposition, the controlled-NOT (**CNOT**) entangles two qubits.
 - A **circuit** is a program: an ordered list of gates applied to a fresh register of qubits.
 - **Measurement** ends the program and hands back plain classical bits.
-- **Sampling** with finite shots shows Monte Carlo noise around the **exact** distribution; a simulator can hand you either one.
+- **Sampling** a finite number of shots gives shot noise around the **exact** distribution; a simulator can hand you either one.
 
 ---
 
@@ -264,7 +264,7 @@ $$\texttt{Backend.execute(functional, readout)} \rightarrow \texttt{Result}$$
 
 <!-- _class: divider -->
 
-<p class="kicker">Part 3 · 35 min · notebooks/03_analog.ipynb</p>
+<p class="kicker">Part 3 · notebooks/03_analog.ipynb</p>
 
 # Hamiltonians & Analog Quantum Computing
 
@@ -274,7 +274,7 @@ $$\texttt{Backend.execute(functional, readout)} \rightarrow \texttt{Result}$$
 
 ## Part 3: the ideas, in plain words
 
-- A **Hamiltonian** is a system's energy function. For us today: a **cost function over bitstrings**, where lower energy means a better solution.
+- A **Hamiltonian** is a system's energy function.
 - The lowest-energy configuration, the **ground state**, *is* the answer.
 - **Annealing**: start in an easy landscape whose minimum you know, morph it slowly into the hard one, and arrive still sitting in the minimum. The morph speed is a real knob you will turn.
 - The analogy to keep: **physics is the optimizer**. You only design what "low energy" means.
@@ -291,17 +291,8 @@ $$\texttt{Backend.execute(functional, readout)} \rightarrow \texttt{Result}$$
 ---
 
 <!-- _class: divider -->
-<!-- _footer: '' -->
 
-# ☕ Break: 15 min
-
-### Next: a molecule's energy, and a quantum compiler for your optimization problems.
-
----
-
-<!-- _class: divider -->
-
-<p class="kicker">Part 4 · 40 min · notebooks/04_variational.ipynb</p>
+<p class="kicker">Part 4 · notebooks/04_variational.ipynb</p>
 
 # Variational Algorithms & Optimization Models
 
@@ -329,7 +320,7 @@ $$\texttt{Backend.execute(functional, readout)} \rightarrow \texttt{Result}$$
 
 <!-- _class: divider -->
 
-<p class="kicker">Part 5 · 20 min · notebooks/05_noise.ipynb</p>
+<p class="kicker">Part 5 · notebooks/05_noise.ipynb</p>
 
 # Noise & Realistic Execution
 
@@ -356,7 +347,7 @@ $$\texttt{Backend.execute(functional, readout)} \rightarrow \texttt{Result}$$
 
 <!-- _class: divider -->
 
-<p class="kicker">Part 6 · 30 min · notebooks/06_execution_and_hardware.ipynb</p>
+<p class="kicker">Part 6 · notebooks/06_execution_and_hardware.ipynb</p>
 
 # Execution & Toward Hardware
 
