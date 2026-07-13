@@ -73,11 +73,11 @@ section.divider code { background: rgba(255,255,255,.18); color: #fff; }
 
 ---
 
-## Me, Qilimanjaro, and QiliSDK
+## Introduction
 
 - **Vyron Vasileiadis** — Tech Lead at **Qilimanjaro Quantum Tech** · vyron@qilimanjaro.tech
-- **Qilimanjaro** builds **analog quantum processors** and the software stack to run them, from Barcelona.
-- **QiliSDK** is that stack's open-source Python SDK, and your tool today: **digital** *and* **analog** quantum computing in one API and the C++ **QiliSim** simulator.
+- **Qilimanjaro** builds **analog quantum computers** and **multimodal data centers** and the software stack to run them.
+- **QiliSDK** is that stack's open-source Python SDK, and your tool today: **digital** *and* **analog** quantum computing in one API along with the C++ **QiliSim** simulator.
 
 ---
 
@@ -94,12 +94,12 @@ section.divider code { background: rgba(255,255,255,.18); color: #fff; }
 
 - **It will not**: speed up Django, give a generic "everything runs faster" boost, or hold big data (100 qubits do not load your database).
 - **Devices today**: noisy, small, expensive, but real, running, and improving every year.
-- **So the smart way in**: a simulator on your laptop is exact and free at learning scale, with none of the queueing.
-- **And it's not a dead end**: what you write on the simulator today runs on real hardware tomorrow, unchanged (Parts 5–6).
+- **So the smart way in**: a simulator on your laptop is exact and free at learning scale.
+- **And it's not a dead end**: what you write on the simulator today runs on real hardware tomorrow, unchanged.
 
 ---
 
-## What you'll build today
+## What you'll build
 
 You'll write each of these yourself, not just watch it run:
 
@@ -129,8 +129,6 @@ About 3 hours in total. Times are approximate, we flex with the room.
 -->
 
 ## Links & QR codes
-
-<p class="small center">Scan to open on your phone, or type the short URL.</p>
 
 <div class="qrgrid">
 <div>
@@ -166,12 +164,6 @@ If its last cell prints counts like `{'00': ~500, '11': ~500}`, you're ready. �
 
 ---
 
-## The architecture
-
-![h:500](img/overall.jpg)
-
----
-
 ## How we'll work
 
 - **Coding-first.** These slides are a map; the real work is in the notebooks.
@@ -182,6 +174,12 @@ If its last cell prints counts like `{'00': ~500, '11': ~500}`, you're ready. �
 - Every snippet is **verified to run** against `qilisdk 0.2.1`.
 
 > Stuck on an exercise? The solution is one folder away, but try first. 🙂
+
+---
+
+## The architecture
+
+![h:500](img/overall.jpg)
 
 ---
 
@@ -209,9 +207,9 @@ That is every symbol today's math needs.
 
 ## Part 1: the ideas, in plain words
 
-- A **qubit** is two complex numbers, its **amplitudes**: one weight for `0`, one for `1`. Think `np.array([a, b])` with unit length.
+- A **qubit** is two complex numbers, its **amplitudes**: one weight for $|0\rangle$, one for $|1\rangle$. Think `np.array([a, b])` with unit length.
 - **Measuring** samples one outcome with probability $|\text{amplitude}|^2$ (the **Born rule**) and destroys the superposition. No peeking twice.
-- 2 qubits need 4 amplitudes: one for `00`, one for `01`, one for `10` and one for `11`.
+- 2 qubits need 4 amplitudes: one for $|00\rangle$, one for $|01\rangle$, one for $|10\rangle$ and one for $|11\rangle$.
 - $n$ qubits need $2^n$ amplitudes. That **memory wall** is why Feynman proposed quantum computers in the first place.
 - But measurement returns only $n$ classical bits, so algorithms must **engineer interference**: wrong answers cancel, the right one survives.
 
@@ -222,7 +220,7 @@ That is every symbol today's math needs.
 - **Superposition**: several amplitudes nonzero at once. **Phase**: an amplitude's sign or angle, invisible on its own, decisive when paths interfere.
 - **Observable**: a measurable quantity written as a matrix. Its **expectation value** is the long-run average of measuring it.
 - **Entanglement**: correlated randomness between qubits that nobody else holds a copy of (the raw material for quantum key distribution).
-- In code: `QTensor` holds states *and* operators. You will meet `ket`, `.probabilities()`, `expect_val`, and `partial_trace`.
+- In code: `QTensor` holds states *and* operators.
 
 ---
 
