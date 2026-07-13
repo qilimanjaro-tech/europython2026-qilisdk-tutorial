@@ -103,7 +103,7 @@ section.divider code { background: rgba(255,255,255,.18); color: #fff; }
 
 You'll write each of these yourself, not just watch it run:
 
-- a **quantum dice roller** — true randomness you can trust — and see why **eavesdropping on a qubit is detectable** (Parts 1–2);
+- a **quantum dice roller** — true randomness you can trust (Parts 1–2);
 - a **conference schedule** solved by quantum annealing (Part 3);
 - a **molecule's ground-state energy** and a **microservice placement** (Part 4);
 - a **noise budget**: how much gate error the chemistry survives (Part 5);
@@ -238,7 +238,7 @@ That is every symbol today's math needs.
 
 # Circuits & Digital Quantum Computing
 
-### Interference, a quantum dice roller, and catching an eavesdropper
+### Interference and a quantum dice roller
 
 ---
 
