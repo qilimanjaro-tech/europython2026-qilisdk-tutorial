@@ -154,7 +154,7 @@ About 3 hours in total. Times are approximate, we flex with the room.
 
 **Two ways to run everything, pick one:**
 
-- **Local**: `pip install -r setup/requirements.txt` (Python 3.11–3.13), then open the notebooks.
+- **Local**: `pip install qilisdk` (Python 3.11–3.13), then open the notebooks.
 - **Colab**: every notebook's first cell installs QiliSDK (pinned to `0.2.1`) automatically. Zero local setup.
 
 **Right now:** open and run `notebooks/00_setup.ipynb`.
