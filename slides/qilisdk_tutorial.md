@@ -83,25 +83,23 @@ section.divider code { background: rgba(255,255,255,.18); color: #fff; }
 
 ## Why quantum computing?
 
-- **Simulating molecules & materials.** Nature runs on quantum mechanics, and describing $n$ interacting quantum particles classically takes $2^n$ numbers. That overwhelms classical RAM fast; a quantum computer *is* such a system.
-- **Combinatorial optimization** (scheduling, routing, portfolios): encode the problem as an **energy landscape** and let physics settle into the minimum.
-- **Machine learning features & sampling**: quantum dynamics is a rich, hard-to-simulate feature map.
-- **And a day-one bonus**: true randomness straight from physics, not from a pseudo-random algorithm.
+- **Simulating molecules and materials** is the most natural fit for a quantum computer, because describing $n$ interacting quantum particles classically needs $2^n$ numbers while a quantum computer holds that state directly.
+- **Combinatorial optimization** problems such as scheduling, routing, and portfolio selection can be rewritten as finding the lowest point of an energy landscape, which is exactly what a quantum annealer is built to minimize.
+- **Machine learning** can use a quantum system as a feature map or sampler, because the probability distributions it produces are rich and hard for a classical computer to reproduce.
+- **True randomness** comes almost for free, because the outcome of a quantum measurement is fundamentally unpredictable rather than produced by a deterministic algorithm.
 
 ---
 
 ## Quantum computing in 2026
 
-- **It will not**: speed up Django, give a generic "everything runs faster" boost, or hold big data (100 qubits do not load your database).
-- **Devices today**: noisy, small, expensive, but real, running, and improving every year.
-- **So the smart way in**: a simulator on your laptop is exact and free at learning scale.
-- **And it's not a dead end**: what you write on the simulator today runs on real hardware tomorrow, unchanged.
+- **Today's quantum computers are not general-purpose accelerators**, so they will not speed up everyday software or hold large datasets, because a few hundred qubits give only a few hundred classical bits when measured.
+- **The hardware today** is noisy, small, and expensive, yet it is real, running, and improving every year.
+- **A simulator on your laptop** is the practical way to learn, since it is exact and free at the scales this tutorial uses.
+- **The code you write is not throwaway**, because the same program runs unchanged on real hardware once you have access.
 
 ---
 
 ## What you'll build
-
-You'll write each of these yourself, not just watch it run:
 
 - a **quantum dice roller** — true randomness you can trust (Parts 1–2);
 - a **conference schedule** solved by quantum annealing (Part 3);
@@ -109,7 +107,7 @@ You'll write each of these yourself, not just watch it run:
 - a **noise budget**: how much gate error the chemistry survives (Part 5);
 - a **circuit compiled onto a real chip**, then a **quantum-reservoir forecaster** (Part 6).
 
-Underneath it all: a working feel for qubits, gates, Hamiltonians, and noise.
+Underneath it all: a working feel for qubits, gates, circuits, Hamiltonians, and noise.
 
 ---
 
